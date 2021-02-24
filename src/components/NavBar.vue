@@ -1,8 +1,9 @@
 <template>
   <div class="nav">
     <div class="nav-box">
-      <router-link class="navbar-brand" to="/">Gallery</router-link> |
-      <router-link v-if="!!isAuthenticated" to="/add-movie">Add Gallery</router-link>
+      <router-link class="navbar-brand" to="/">Gallery</router-link> 
+      <router-link v-if="!!isAuthenticated" to="/my-galleries">My Galleries</router-link> |
+      <router-link v-if="!!isAuthenticated" to="/create">Create New Gallery</router-link>
     </div>
     <!-- <div class="" v-if="!!isAuthenticated">
       <input  class="form-control mr-sm-2" type="search" @input="search" placeholder="Search" aria-label="Search" />

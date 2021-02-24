@@ -19,6 +19,10 @@ class AuthService extends BaseService {
     const { data } = await this.http.get('/me');
     return data;
   }
+
+  getUserId() {
+    return localStorage.getItem('user_id')
+  }
 }
 
 const authService = new AuthService();

@@ -4,6 +4,7 @@ export const actions = {
   async login(store, credentials) {
     const { user, token } = await authService.login(credentials);
     localStorage.setItem('token', JSON.stringify(token));
+    localStorage.setItem('user_id', user.id);
 
     store.commit('setActiveUser', user);
     store.commit('setToken', token);
@@ -26,7 +27,6 @@ export const actions = {
     }
   },
   async logout(store) {
-    console.log('action logout');
     await authService.logout();
     store.commit('setToken', null);
     store.commit('setActiveUser', {});

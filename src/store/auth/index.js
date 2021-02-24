@@ -9,6 +9,7 @@ const store = {
   state: {
     token: token,
     activeUser: null,
+    user_id: null,
   },
   actions,
   mutations,
