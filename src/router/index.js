@@ -5,6 +5,7 @@ import Login from '../views/Login.vue';
 import Galleries from '../views/Galleries.vue';
 import MyGalleries from '../views/MyGalleries.vue';
 import SingleGallery from '../views/SingleGallery.vue';
+import AuthorGalleries from '../views/AuthorGalleries.vue';
 import AddGallery from '../views/AddGallery.vue';
 import { globalAuthGuard } from '../guards/authGuard';
 
@@ -31,6 +32,12 @@ const routes = [
     path: '/galleries/:id', 
     name: 'single-gallery',
     component: SingleGallery, 
+    meta: { authRequired: true }
+  },
+  {
+    path: '/author/:id', 
+    name: 'author-galleries',
+    component: AuthorGalleries, 
     meta: { authRequired: true }
   },
   {

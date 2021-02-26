@@ -8,7 +8,6 @@ class GalleryService extends BaseService {
 
   async getGallery(id) {
     const { data } = await this.http.get(`/galleries/${id}`);
-    console.log(data);
     return data;
   }
 
@@ -24,6 +23,16 @@ class GalleryService extends BaseService {
 
   async deleteGallery(id) {
     const { data } = await this.http.delete(`/galleries/${id}`);
+    return data;
+  }
+
+  async getMyGalleries(user_id) {
+    const { data } = await this.http.get(`/my-galleries`, { params: { user_id } });
+    return data;
+  }
+
+  async getAuthorGalleries(id) {
+    const { data } = await this.http.get(`/author-galleries/${id}`);
     return data;
   }
 }

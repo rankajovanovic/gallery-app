@@ -1,7 +1,7 @@
 <template>
   <div class="nav">
     <div class="nav-box">
-      <router-link class="navbar-brand" to="/">Gallery</router-link> 
+      <router-link class="navbar-brand" to="/"><b>Gallery</b></router-link> 
       <router-link v-if="!!isAuthenticated" to="/my-galleries">My Galleries</router-link> |
       <router-link v-if="!!isAuthenticated" to="/create">Create New Gallery</router-link>
     </div>
