@@ -114,7 +114,7 @@ export default {
 	background-color: white;
 	padding: 50px;
 	max-width: 500px !important;
-	max-height: 750px !important;
+	max-height: 800px !important;
 	position:relative;
   -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
@@ -146,11 +146,6 @@ export default {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-/* .form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-} */
 .error-message {
   color: red;
 }

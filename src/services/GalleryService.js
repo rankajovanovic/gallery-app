@@ -1,13 +1,20 @@
 import BaseService from './BaseService';
 
 class GalleryService extends BaseService {
-  async getAll(name) {
-    const { data } = await this.http.get('/galleries', { params: { name } });
+  async getAll(payload) {
+    
+    const { data } = await this.http.get('/galleries', {  
+      headers: {
+      'pagination': payload.pagination,
+      'searchText': payload.searchText
+    } 
+    });
     return data;
   }
 
   async getGallery(id) {
     const { data } = await this.http.get(`/galleries/${id}`);
+    console.log(data);
     return data;
   }
 

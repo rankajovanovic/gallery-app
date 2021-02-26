@@ -1,13 +1,12 @@
 <template>
   <div class="nav">
     <div class="nav-box">
-      <router-link class="navbar-brand" to="/"><b>Gallery</b></router-link> 
+      <span class="navbar-brand mb-0 h1"><b>AppGallery</b></span>
+      <router-link to="/">All Galleries</router-link> |
       <router-link v-if="!!isAuthenticated" to="/my-galleries">My Galleries</router-link> |
       <router-link v-if="!!isAuthenticated" to="/create">Create New Gallery</router-link>
     </div>
-    <!-- <div class="" v-if="!!isAuthenticated">
-      <input  class="form-control mr-sm-2" type="search" @input="search" placeholder="Search" aria-label="Search" />
-    </div> -->
+  
     <div class="nav-box">
       <template v-if="!isAuthenticated">
         <router-link to="/register">Register</router-link> |
@@ -22,14 +21,17 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
+
 export default {
+
   name: 'nav-bar',
   computed: {
     ...mapGetters('auth', ['isAuthenticated']),
   },
   methods: {
     ...mapActions('auth', ['logout']),
-  }
+    },
+          
 };
 </script>
 <style scoped>
@@ -52,5 +54,4 @@ export default {
 .button {
   cursor: pointer;
 }
-
 </style>

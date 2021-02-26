@@ -14,14 +14,16 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    redirect: '/galleries',
-  },
-  {
-    path: '/galleries',
     name: 'Galleries',
     component: Galleries,
     meta: { authRequired: true }
   },
+  // {
+  //   path: '/galleries',
+  //   name: 'Galleries',
+  //   component: Galleries,
+  //   meta: { authRequired: true }
+  // },
   {
     path: '/my-galleries',
     name: 'MyGalleries',
@@ -35,14 +37,20 @@ const routes = [
     meta: { authRequired: true }
   },
   {
-    path: '/author/:id', 
+    path: '/authors/:id', 
     name: 'author-galleries',
     component: AuthorGalleries, 
     meta: { authRequired: true }
   },
   {
     path: '/create',
-    name: 'AddGallery',
+    name: 'add-gallery',
+    component: AddGallery,
+    meta: { authRequired: true }
+  },
+  {
+    path: '/edit-gallery/:id',
+    name: 'edit-gallery',
     component: AddGallery,
     meta: { authRequired: true }
   },

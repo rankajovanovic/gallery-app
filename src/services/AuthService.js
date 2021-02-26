@@ -1,8 +1,10 @@
 import BaseService from './BaseService';
 
 class AuthService extends BaseService {
+  
   async login(credentials) {
     const { data } = await this.http.post('/login', credentials);
+    
     return data;
   }
 

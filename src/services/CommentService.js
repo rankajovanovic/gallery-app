@@ -1,14 +1,19 @@
 import BaseService from './BaseService';
 
-export default class CommentService {
+class CommentService extends BaseService {
   
-    addComment(comment) {
-        return http.post('comments', comment)
+    async addComment(comment) {
+        console.log('usao u comment service');
+         const { data } = await this.http.post('comments', comment )
+         console.log(data);
+         return data;
     }
 
-    removeComment(id) {
-        return http.delete(`comments/${id}`)
+    async removeComment(id) {
+        const {data} = await this.http.delete(`comments/${id}`)
+        return data;
     }
 }
 
-export const commentsService = new CommentService()
+const commentService = new CommentService();
+export default commentService;
